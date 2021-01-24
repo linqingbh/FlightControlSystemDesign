@@ -1,5 +1,5 @@
 Model {
-  Name			  "ILSGlideslope"
+  Name			  "ILSGlideslopeSimulink"
   Version		  10.2
   SavedCharacterEncoding  "windows-1252"
   ModelUUID		  "96ddb634-5730-4993-90b8-9c227c216080"
@@ -12,9 +12,15 @@ Model {
       SampleTime	      "-1"
       UnitExpr		      "inherit"
     }
-    NumRootOutports	    0
+    NumRootOutports	    1
+    Outport {
+      Name		      "Output"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      UnitExpr		      "inherit"
+    }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3"
+    ComputedModelVersion    "1.5"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -30,7 +36,7 @@ Model {
     NumExternalFileReferences 1
     ExternalFileReference {
       Reference		      "pid_lib/PID Controller"
-      Path		      "ILSGlideslope/H_coupler/PID Controller"
+      Path		      "ILSGlideslopeSimulink/H_coupler/PID Controller"
       SID		      "9"
       Type		      "LIBRARY_BLOCK"
     }
@@ -63,7 +69,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-7.0, -7.0, 1550.0, 838.0]
+      Location		      [-7.0, -1080.0, 1136.0, 1047.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -90,10 +96,10 @@ Model {
 	  IsTabbed		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1807.0, 755.0]
+	  Extents		  [1289.0, 1016.0]
 	  ZoomFactor		  [1.25]
-	  Offset		  [-199.20683618008132, -56.875341626716349]
-	  SceneRectInView	  [-199.20683618008132, -56.875341626716349, 1156.48, 483.2]
+	  Offset		  [27.96110149504306, -222.47555423735162]
+	  SceneRectInView	  [27.96110149504306, -222.47555423735162, 824.96, 650.24]
 	}
 	Object {
 	  $ObjectID		  6
@@ -101,10 +107,10 @@ Model {
 	  IsTabbed		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "10"
-	  Extents		  [1807.0, 755.0]
+	  Extents		  [1289.0, 1016.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [-532.4, -255.09999999999997]
-	  SceneRectInView	  [-532.4, -255.09999999999997, 1445.6, 604.0]
+	  Offset		  [-325.6, -359.9]
+	  SceneRectInView	  [-325.6, -359.9, 1031.2, 812.8]
 	}
 	PropName		"EditorsInfo"
       }
@@ -144,7 +150,7 @@ Model {
       "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAAB5AP////sAAABgAFMAaQBtAHUAb"
       "ABpAG4AawA6AEUAZABpAHQAbwByADoAUgBlAGYAZQByAGUAbgBjAGUAZABGAGkAbABlAHMALwBSAGUAZgBlAHIAZQBuAGMAZQBkACAARgBpAGwAZ"
       "QBzAAAAAAD/////AAAApwD///8AAAABAAAAAAAAAAD8AgAAAAH7AAAAVABHAEwAVQBFADIAOgBQAHIAbwBwAGUAcgB0AHkASQBuAHMAcABlAGMAd"
-      "ABvAHIALwBQAHIAbwBwAGUAcgB0AHkAIABJAG4AcwBwAGUAYwB0AG8AcgAAAAAA/////wAAAhYA////AAAHPAAAAzkAAAABAAAAAgAAAAEAAAAC/"
+      "ABvAHIALwBQAHIAbwBwAGUAcgB0AHkAIABJAG4AcwBwAGUAYwB0AG8AcgAAAAAA/////wAAAhYA////AAAFNgAABD4AAAABAAAAAgAAAAEAAAAC/"
       "AAAAAMAAAAAAAAAAQAAADYAYwBvAGwAbABhAHAAcwBpAGIAbABlAFAAYQBuAGUAbABUAG8AbwBsAEIAYQByAEwAZQBmAHQDAAAAAP////8AAAAAA"
       "AAAAAAAAAEAAAABAAAAOABjAG8AbABsAGEAcABzAGkAYgBsAGUAUABhAG4AZQBsAFQAbwBvAGwAQgBhAHIAUgBpAGcAaAB0AwAAAAD/////AAAAA"
       "AAAAAAAAAADAAAAAQAAADoAYwBvAGwAbABhAHAAcwBpAGIAbABlAFAAYQBuAGUAbABUAG8AbwBsAEIAYQByAEIAbwB0AHQAbwBtAAAAAAD/////A"
@@ -167,9 +173,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "hooge"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Jan 23 15:41:56 2021"
-  RTWModifiedTimeStamp	  533317253
-  ModelVersionFormat	  "%<AutoIncrement:1.3>"
+  LastModifiedDate	  "Sun Jan 24 11:15:54 2021"
+  RTWModifiedTimeStamp	  533387631
+  ModelVersionFormat	  "%<AutoIncrement:1.5>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -228,12 +234,12 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    9
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "ILSGlideslope"
-    overrideMode_	    [0U]
+    model_		    "ILSGlideslopeSimulink"
+    overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "ILSGlideslope"
+      Cell		      "ILSGlideslopeSimulink"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -1143,6 +1149,24 @@ Model {
       Interpolate	      on
     }
     Block {
+      BlockType		      Integrator
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "0"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      WrapState		      off
+      WrappedStateUpperValue  "pi"
+      WrappedStateLowerValue  "-pi"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+      IgnoreLimit	      off
+      ZeroCross		      on
+      ContinuousStateAttributes	"''"
+    }
+    Block {
       BlockType		      MATLABFcn
       MATLABFcn		      "sin"
       OutputDimensions	      "-1"
@@ -1231,10 +1255,18 @@ Model {
       SaturateOnIntegerOverflow	off
       SampleTime	      "-1"
     }
+    Block {
+      BlockType		      TransferFcn
+      Numerator		      "[1]"
+      Denominator	      "[1 2 1]"
+      AbsoluteTolerance	      "auto"
+      ContinuousStateAttributes	"''"
+      Realization	      "auto"
+    }
   }
   System {
-    Name		    "ILSGlideslope"
-    Location		    [-7, -7, 1543, 831]
+    Name		    "ILSGlideslopeSimulink"
+    Location		    [-7, -1080, 1129, -33]
     SystemRect		    [0.000000, 0.000000, 0.000000, 0.000000]
     Open		    on
     PortBlocksUseCompactNotation off
@@ -1252,7 +1284,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "14"
+    SIDHighWatermark	    "24"
     SimulinkSubDomain	    "Simulink"
     Block {
       BlockType		      Inport
@@ -1266,8 +1298,20 @@ Model {
       Name		      "F16 model from Niek"
       SID		      "14"
       Ports		      [1, 1]
-      Position		      [215, 290, 285, 320]
+      Position		      [355, 135, 425, 165]
       ZOrder		      314
+      Port {
+	PortNumber		1
+	Name			"theta"
+      }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain"
+      SID		      "21"
+      Position		      [755, 135, 785, 165]
+      ZOrder		      320
+      Gain		      "1/R_0"
     }
     Block {
       BlockType		      Constant
@@ -1275,7 +1319,7 @@ Model {
       SID		      "13"
       Position		      [45, 125, 75, 155]
       ZOrder		      313
-      Value		      "0"
+      Value		      "Gamma_ref"
     }
     Block {
       BlockType		      SubSystem
@@ -1286,9 +1330,13 @@ Model {
       ZOrder		      312
       RequestExecContextInheritance off
       ContentPreviewEnabled   on
+      Port {
+	PortNumber		1
+	Name			"theta_r"
+      }
       System {
 	Name			"H_coupler"
-	Location		[-7, -7, 1543, 831]
+	Location		[-7, -1080, 1129, -33]
 	SystemRect		[0.000000, 0.000000, 0.000000, 0.000000]
 	Open			off
 	PortBlocksUseCompactNotation off
@@ -1543,23 +1591,135 @@ Model {
       }
     }
     Block {
+      BlockType		      Gain
+      Name		      "H_receiver"
+      SID		      "24"
+      Position		      [355, 265, 385, 295]
+      ZOrder		      323
+    }
+    Block {
       BlockType		      Sum
       Name		      "Subtract"
       SID		      "1"
       Ports		      [2, 1]
-      Position		      [195, 132, 225, 163]
+      Position		      [135, 132, 165, 163]
       ZOrder		      1
       IconShape		      "rectangular"
       Inputs		      "+-"
+      Port {
+	PortNumber		1
+	Name			"Gamma_error"
+      }
     }
     Block {
       BlockType		      Sum
       Name		      "Sum"
       SID		      "3"
       Ports		      [2, 1]
-      Position		      [485, 140, 505, 160]
+      Position		      [600, 140, 620, 160]
       ZOrder		      178
       Inputs		      "|++"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "flight path --> deviation"
+      SID		      "18"
+      Ports		      [1, 1]
+      Position		      [675, 120, 715, 180]
+      ZOrder		      319
+      RequestExecContextInheritance off
+      ContentPreviewEnabled   on
+      System {
+	Name			"flight path --> deviation"
+	Location		[30, 30, 1010, 750]
+	SystemRect		[0.000000, 0.000000, 0.000000, 0.000000]
+	Open			off
+	PortBlocksUseCompactNotation off
+	SetExecutionDomain	off
+	ExecutionDomainType	"Deduce"
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"150"
+	SimulinkSubDomain	"Simulink"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  SID			  "19"
+	  Position		  [20, 28, 50, 42]
+	  ZOrder		  318
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator"
+	  SID			  "16"
+	  Ports			  [1, 1]
+	  Position		  [85, 20, 115, 50]
+	  ZOrder		  316
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "V_0*pi/180"
+	  SID			  "17"
+	  Position		  [145, 20, 175, 50]
+	  ZOrder		  317
+	  Gain			  "V_0*pi/180"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  SID			  "20"
+	  Position		  [195, 28, 225, 42]
+	  ZOrder		  319
+	}
+	Line {
+	  ZOrder		  25
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Integrator"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  22
+	  SrcBlock		  "Integrator"
+	  SrcPort		  1
+	  DstBlock		  "V_0*pi/180"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  26
+	  SrcBlock		  "V_0*pi/180"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      TransferFcn
+      Name		      "gamma/theta"
+      SID		      "15"
+      Position		      [488, 132, 548, 168]
+      ZOrder		      315
+      Denominator	      "[1 1]"
+      Port {
+	PortNumber		1
+	Name			"gamma"
+      }
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "Output"
+      SID		      "22"
+      Position		      [840, 143, 870, 157]
+      ZOrder		      321
     }
     Line {
       ZOrder		      13
@@ -1572,23 +1732,84 @@ Model {
       ZOrder		      7
       SrcBlock		      "gamma"
       SrcPort		      1
-      Points		      [462, 0; 0, 106; -47, 0]
+      Points		      [510, 0; 0, 101; 20, 0]
       DstBlock		      "Sum"
       DstPort		      2
     }
     Line {
+      Name		      "Gamma_error"
       ZOrder		      11
+      Labels		      [1, 1]
       SrcBlock		      "Subtract"
       SrcPort		      1
       DstBlock		      "H_coupler"
       DstPort		      1
     }
     Line {
-      ZOrder		      12
+      Name		      "theta_r"
+      ZOrder		      18
+      Labels		      [-1, 0]
       SrcBlock		      "H_coupler"
+      SrcPort		      1
+      DstBlock		      "F16 model from Niek"
+      DstPort		      1
+    }
+    Line {
+      Name		      "theta"
+      ZOrder		      20
+      Labels		      [1, 1]
+      SrcBlock		      "F16 model from Niek"
+      SrcPort		      1
+      DstBlock		      "gamma/theta"
+      DstPort		      1
+    }
+    Line {
+      Name		      "gamma"
+      ZOrder		      21
+      Labels		      [1, 1]
+      SrcBlock		      "gamma/theta"
       SrcPort		      1
       DstBlock		      "Sum"
       DstPort		      1
+    }
+    Line {
+      ZOrder		      25
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      DstBlock		      "flight path --> deviation"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      26
+      SrcBlock		      "flight path --> deviation"
+      SrcPort		      1
+      DstBlock		      "Gain"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      30
+      SrcBlock		      "H_receiver"
+      SrcPort		      1
+      Points		      [19, 0; 0, -49; -298, 0; 0, -76]
+      DstBlock		      "Subtract"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      28
+      SrcBlock		      "Gain"
+      SrcPort		      1
+      Points		      [19, 0]
+      Branch {
+	ZOrder			33
+	Points			[0, 175; -485, 0; 0, -45]
+	DstBlock		"H_receiver"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			32
+	DstBlock		"Output"
+	DstPort			1
+      }
     }
   }
 }
