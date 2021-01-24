@@ -4,23 +4,17 @@ Model {
   SavedCharacterEncoding  "windows-1252"
   ModelUUID		  "96ddb634-5730-4993-90b8-9c227c216080"
   GraphicalInterface {
-    NumRootInports	    1
-    Inport {
-      Name		      "gamma"
-      BusObject		      ""
-      OutputFunctionCall      "off"
-      SampleTime	      "-1"
-      UnitExpr		      "inherit"
-    }
+    NumRootInports	    0
     NumRootOutports	    1
     Outport {
       Name		      "Output"
       BusObject		      ""
       BusOutputAsStruct	      "off"
+      SignalName	      "Gamma"
       UnitExpr		      "inherit"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.5"
+    ComputedModelVersion    "1.6"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -33,7 +27,13 @@ Model {
     IsArchitectureModel	    0
     IsAUTOSARArchitectureModel 0
     NumParameterArguments   0
-    NumExternalFileReferences 1
+    NumExternalFileReferences 2
+    ExternalFileReference {
+      Reference		      "pid_lib/PID Controller"
+      Path		      "ILSGlideslopeSimulink/Airplane + AFCS/Pitch controller"
+      SID		      "36"
+      Type		      "LIBRARY_BLOCK"
+    }
     ExternalFileReference {
       Reference		      "pid_lib/PID Controller"
       Path		      "ILSGlideslopeSimulink/H_coupler/PID Controller"
@@ -69,7 +69,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-7.0, -1080.0, 1136.0, 1047.0]
+      Location		      [-7.0, -1087.0, 1934.0, 1054.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -89,28 +89,50 @@ Model {
       }
       Array {
 	Type			"Simulink.EditorInfo"
-	Dimension		2
+	Dimension		4
 	Object {
 	  $ObjectID		  5
 	  IsActive		  [1]
 	  IsTabbed		  [1]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
-	  Extents		  [1289.0, 1016.0]
-	  ZoomFactor		  [1.25]
-	  Offset		  [27.96110149504306, -222.47555423735162]
-	  SceneRectInView	  [27.96110149504306, -222.47555423735162, 824.96, 650.24]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "31"
+	  Extents		  [2287.0, 1025.0]
+	  ZoomFactor		  [1.75]
+	  Offset		  [-210.70268441975611, -136.28899924247833]
+	  SceneRectInView	  [-210.70268441975611, -136.28899924247833, 1045.4857142857143, 468.57142857142856]
 	}
 	Object {
 	  $ObjectID		  6
 	  IsActive		  [0]
 	  IsTabbed		  [0]
+	  ViewObjType		  "SimulinkTopLevel"
+	  LoadSaveID		  "0"
+	  Extents		  [2287.0, 1025.0]
+	  ZoomFactor		  [1.5]
+	  Offset		  [-13.61228204730503, -114.33662855862883]
+	  SceneRectInView	  [-13.61228204730503, -114.33662855862883, 1219.7333333333333, 546.66666666666663]
+	}
+	Object {
+	  $ObjectID		  7
+	  IsActive		  [0]
+	  IsTabbed		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "10"
-	  Extents		  [1289.0, 1016.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [-325.6, -359.9]
-	  SceneRectInView	  [-325.6, -359.9, 1031.2, 812.8]
+	  Extents		  [2287.0, 1025.0]
+	  ZoomFactor		  [2.5]
+	  Offset		  [-60.479999999999905, -109.02000000000001]
+	  SceneRectInView	  [-60.479999999999905, -109.02000000000001, 731.84, 328.0]
+	}
+	Object {
+	  $ObjectID		  8
+	  IsActive		  [0]
+	  IsTabbed		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "18"
+	  Extents		  [2287.0, 1025.0]
+	  ZoomFactor		  [2.5]
+	  Offset		  [-160.84239579439549, -125.93714285714275]
+	  SceneRectInView	  [-160.84239579439549, -125.93714285714275, 731.84, 328.0]
 	}
 	PropName		"EditorsInfo"
       }
@@ -118,7 +140,7 @@ Model {
 	Type			"Simulink.DockComponentInfo"
 	Dimension		2
 	Object {
-	  $ObjectID		  7
+	  $ObjectID		  9
 	  Type			  "GLUE2:PropertyInspector"
 	  ID			  "Property Inspector"
 	  Visible		  [1]
@@ -131,7 +153,7 @@ Model {
 	  Minimized		  "On"
 	}
 	Object {
-	  $ObjectID		  8
+	  $ObjectID		  10
 	  Type			  "Simulink:Editor:ReferencedFiles"
 	  ID			  "Referenced Files"
 	  Visible		  [0]
@@ -150,7 +172,7 @@ Model {
       "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAAB5AP////sAAABgAFMAaQBtAHUAb"
       "ABpAG4AawA6AEUAZABpAHQAbwByADoAUgBlAGYAZQByAGUAbgBjAGUAZABGAGkAbABlAHMALwBSAGUAZgBlAHIAZQBuAGMAZQBkACAARgBpAGwAZ"
       "QBzAAAAAAD/////AAAApwD///8AAAABAAAAAAAAAAD8AgAAAAH7AAAAVABHAEwAVQBFADIAOgBQAHIAbwBwAGUAcgB0AHkASQBuAHMAcABlAGMAd"
-      "ABvAHIALwBQAHIAbwBwAGUAcgB0AHkAIABJAG4AcwBwAGUAYwB0AG8AcgAAAAAA/////wAAAhYA////AAAFNgAABD4AAAABAAAAAgAAAAEAAAAC/"
+      "ABvAHIALwBQAHIAbwBwAGUAcgB0AHkAIABJAG4AcwBwAGUAYwB0AG8AcgAAAAAA/////wAAAhYA////AAAJHAAABEcAAAABAAAAAgAAAAEAAAAC/"
       "AAAAAMAAAAAAAAAAQAAADYAYwBvAGwAbABhAHAAcwBpAGIAbABlAFAAYQBuAGUAbABUAG8AbwBsAEIAYQByAEwAZQBmAHQDAAAAAP////8AAAAAA"
       "AAAAAAAAAEAAAABAAAAOABjAG8AbABsAGEAcABzAGkAYgBsAGUAUABhAG4AZQBsAFQAbwBvAGwAQgBhAHIAUgBpAGcAaAB0AwAAAAD/////AAAAA"
       "AAAAAAAAAADAAAAAQAAADoAYwBvAGwAbABhAHAAcwBpAGIAbABlAFAAYQBuAGUAbABUAG8AbwBsAEIAYQByAEIAbwB0AHQAbwBtAAAAAAD/////A"
@@ -173,9 +195,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "hooge"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Jan 24 11:15:54 2021"
-  RTWModifiedTimeStamp	  533387631
-  ModelVersionFormat	  "%<AutoIncrement:1.5>"
+  LastModifiedDate	  "Sun Jan 24 16:44:54 2021"
+  RTWModifiedTimeStamp	  533407298
+  ModelVersionFormat	  "%<AutoIncrement:1.6>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -232,7 +254,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    9
+    $ObjectID		    11
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "ILSGlideslopeSimulink"
     overrideMode_	    [0.0]
@@ -279,7 +301,7 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      10
+      $ObjectID		      12
       Version		      "20.1.0"
       DisabledProps	      []
       Description	      ""
@@ -287,7 +309,7 @@ Model {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  11
+	  $ObjectID		  13
 	  Version		  "20.1.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -329,7 +351,7 @@ Model {
 	  ODENIntegrationMethod	  "ode3"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  12
+	  $ObjectID		  14
 	  Version		  "20.1.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -371,7 +393,7 @@ Model {
 	  LoggingIntervals	  "[-inf, inf]"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  13
+	  $ObjectID		  15
 	  Version		  "20.1.0"
 	  Array {
 	    Type		    "Cell"
@@ -445,7 +467,7 @@ Model {
 	  EfficientTunableParamExpr off
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  14
+	  $ObjectID		  16
 	  Version		  "20.1.0"
 	  Array {
 	    Type		    "Cell"
@@ -568,7 +590,7 @@ Model {
 	  VariantConditionMismatch "none"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  15
+	  $ObjectID		  17
 	  Version		  "20.1.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -618,7 +640,7 @@ Model {
 	  HardwareBoardFeatureSet "EmbeddedCoderHSP"
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  16
+	  $ObjectID		  18
 	  Version		  "20.1.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -638,7 +660,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  17
+	  $ObjectID		  19
 	  Version		  "20.1.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -682,7 +704,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  18
+	  $ObjectID		  20
 	  Version		  "20.1.0"
 	  Array {
 	    Type		    "Cell"
@@ -788,7 +810,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      19
+	      $ObjectID		      21
 	      Version		      "20.1.0"
 	      Array {
 		Type			"Cell"
@@ -878,7 +900,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      20
+	      $ObjectID		      22
 	      Version		      "20.1.0"
 	      Array {
 		Type			"Cell"
@@ -982,7 +1004,7 @@ Model {
 	  }
 	}
 	SlCovCC.ConfigComp {
-	  $ObjectID		  21
+	  $ObjectID		  23
 	  Version		  "20.1.0"
 	  DisabledProps		  []
 	  Description		  "Simulink Coverage Configuration Component"
@@ -1031,11 +1053,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    10
+    $ObjectID		    12
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    22
+    $ObjectID		    24
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -1114,6 +1136,12 @@ Model {
       PreserveConstantTs      off
     }
     Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "bar"
+      BusSelectionMode	      off
+    }
+    Block {
       BlockType		      Gain
       Gain		      "1"
       Multiplication	      "Element-wise(K.*u)"
@@ -1167,14 +1195,6 @@ Model {
       ContinuousStateAttributes	"''"
     }
     Block {
-      BlockType		      MATLABFcn
-      MATLABFcn		      "sin"
-      OutputDimensions	      "-1"
-      OutputSignalType	      "auto"
-      Output1D		      on
-      SampleTime	      "-1"
-    }
-    Block {
       BlockType		      Outport
       Port		      "1"
       IconDisplay	      "Port number"
@@ -1197,6 +1217,26 @@ Model {
       OutputWhenUnConnected   off
       OutputWhenUnconnectedValue "0"
       VectorParamsAs1DForOutWhenUnconnected on
+    }
+    Block {
+      BlockType		      S-Function
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      MultiThreadCoSim	      "auto"
+    }
+    Block {
+      BlockType		      Saturate
+      UpperLimit	      "0.5"
+      LowerLimit	      "-0.5"
+      LinearizeAsGain	      on
+      ZeroCross		      on
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
     }
     Block {
       BlockType		      SubSystem
@@ -1256,6 +1296,9 @@ Model {
       SampleTime	      "-1"
     }
     Block {
+      BlockType		      Terminator
+    }
+    Block {
       BlockType		      TransferFcn
       Numerator		      "[1]"
       Denominator	      "[1 2 1]"
@@ -1266,9 +1309,9 @@ Model {
   }
   System {
     Name		    "ILSGlideslopeSimulink"
-    Location		    [-7, -1080, 1129, -33]
+    Location		    [-7, -1087, 1927, -33]
     SystemRect		    [0.000000, 0.000000, 0.000000, 0.000000]
-    Open		    on
+    Open		    off
     PortBlocksUseCompactNotation off
     SetExecutionDomain	    off
     ExecutionDomainType	    "Deduce"
@@ -1282,61 +1325,31 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "125"
+    ZoomFactor		    "150"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "24"
+    SIDHighWatermark	    "53"
     SimulinkSubDomain	    "Simulink"
     Block {
-      BlockType		      Inport
-      Name		      "gamma"
-      SID		      "4"
-      Position		      [45, 88, 75, 102]
-      ZOrder		      179
-    }
-    Block {
-      BlockType		      MATLABFcn
-      Name		      "F16 model from Niek"
-      SID		      "14"
-      Ports		      [1, 1]
-      Position		      [355, 135, 425, 165]
-      ZOrder		      314
-      Port {
-	PortNumber		1
-	Name			"theta"
-      }
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "Gain"
-      SID		      "21"
-      Position		      [755, 135, 785, 165]
-      ZOrder		      320
-      Gain		      "1/R_0"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Gama_ref"
-      SID		      "13"
-      Position		      [45, 125, 75, 155]
-      ZOrder		      313
-      Value		      "Gamma_ref"
-    }
-    Block {
       BlockType		      SubSystem
-      Name		      "H_coupler"
-      SID		      "10"
+      Name		      "1/R"
+      SID		      "51"
       Ports		      [1, 1]
-      Position		      [260, 120, 300, 180]
-      ZOrder		      312
+      Position		      [795, 127, 865, 173]
+      ZOrder		      336
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
       RequestExecContextInheritance off
+      SFBlockType	      "MATLAB Function"
       ContentPreviewEnabled   on
       Port {
 	PortNumber		1
-	Name			"theta_r"
+	Name			"Gamma"
+	PropagatedSignals	"y"
       }
       System {
-	Name			"H_coupler"
-	Location		[-7, -1080, 1129, -33]
+	Name			"1/R"
+	Location		[223, 338, 826, 833]
 	SystemRect		[0.000000, 0.000000, 0.000000, 0.000000]
 	Open			off
 	PortBlocksUseCompactNotation off
@@ -1353,10 +1366,614 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
+	SIDHighWatermark	"21"
 	SimulinkSubDomain	"Simulink"
 	Block {
 	  BlockType		  Inport
-	  Name			  "In1"
+	  Name			  "u"
+	  SID			  "51::1"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  -1
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "51::20"
+	  Ports			  [1, 1]
+	  Position		  [270, 230, 320, 270]
+	  ZOrder		  11
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "51::19"
+	  Tag			  "Stateflow S-Function 2"
+	  Ports			  [1, 2]
+	  Position		  [180, 100, 230, 160]
+	  ZOrder		  10
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[1 2]"
+	  SFunctionDeploymentMode off
+	  EnableBusSupport	  off
+	  SFcnIsStateOwnerBlock	  off
+	  Port {
+	    PortNumber		    2
+	    Name		    "y"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "51::21"
+	  Position		  [460, 241, 480, 259]
+	  ZOrder		  12
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "y"
+	  SID			  "51::5"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  -5
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "u"
+	  SrcPort		  1
+	  Points		  [65, 0; 0, 20]
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "y"
+	  ZOrder		  6
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  Points		  [121, 0; 0, -35]
+	  DstBlock		  "y"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  7
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  8
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  Points		  [16, 0; 0, 135]
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Add"
+      SID		      "46"
+      Ports		      [2, 1]
+      Position		      [595, 127, 625, 158]
+      ZOrder		      333
+      IconShape		      "rectangular"
+      Port {
+	PortNumber		1
+	Name			"gamma + 3"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Airplane + AFCS"
+      SID		      "31"
+      Ports		      [1, 1]
+      Position		      [350, 120, 425, 180]
+      ZOrder		      331
+      RequestExecContextInheritance off
+      ContentPreviewEnabled   on
+      Port {
+	PortNumber		1
+	Name			"theta"
+      }
+      System {
+	Name			"Airplane + AFCS"
+	Location		[-7, -1087, 1927, -33]
+	SystemRect		[0.000000, 0.000000, 0.000000, 0.000000]
+	Open			on
+	PortBlocksUseCompactNotation off
+	SetExecutionDomain	off
+	ExecutionDomainType	"Deduce"
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"175"
+	SimulinkSubDomain	"Simulink"
+	Block {
+	  BlockType		  Inport
+	  Name			  "theta_r"
+	  SID			  "32"
+	  Position		  [-140, 28, -110, 42]
+	  ZOrder		  330
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "El-To Pitch rate from SS Niek "
+	  SID			  "41"
+	  Position		  [280, 27, 340, 63]
+	  ZOrder		  339
+	  Numerator		  "[-0.05702 -0.03308 -0.001052 4.378e-17 0]"
+	  Denominator		  "[1 1.391 0.1847 0.005469 -0.007719 2.533e-16]"
+	  Port {
+	    PortNumber		    1
+	    Name		    "q"
+	  }
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Elevator Servo"
+	  SID			  "39"
+	  Position		  [135, 27, 200, 63]
+	  ZOrder		  337
+	  Numerator		  "[20.2]"
+	  Denominator		  "[1 20.2]"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator"
+	  SID			  "42"
+	  Ports			  [1, 1]
+	  Position		  [365, 30, 395, 60]
+	  ZOrder		  340
+	  Port {
+	    PortNumber		    1
+	    Name		    "theta"
+	  }
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Pitch att sensor"
+	  SID			  "43"
+	  Position		  [170, 205, 200, 235]
+	  ZOrder		  341
+	  BlockMirror		  on
+	  Port {
+	    PortNumber		    1
+	    Name		    "theta_m"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Pitch controller"
+	  SID			  "36"
+	  Ports			  [1, 1]
+	  Position		  [-20, 27, 20, 63]
+	  ZOrder		  334
+	  LibraryVersion	  "2.30"
+	  SourceBlock		  "pid_lib/PID Controller"
+	  SourceType		  "PID 1dof"
+	  SourceProductBaseCode	  "SL"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  ContentPreviewEnabled	  on
+	  Controller		  "PID"
+	  Form			  "Parallel"
+	  TimeDomain		  "Continuous-time"
+	  UseExternalTs		  off
+	  SampleTime		  "-1"
+	  IntegratorMethod	  "Forward Euler"
+	  FilterMethod		  "Forward Euler"
+	  ControllerParametersSource "internal"
+	  P			  "1"
+	  I			  "1"
+	  D			  "0"
+	  UseFilter		  on
+	  N			  "100"
+	  TunerSelectOption	  "Transfer Function Based (PID Tuner App)"
+	  ZeroCross		  on
+	  InitialConditionSource  "internal"
+	  InitialConditionForIntegrator	"0"
+	  InitialConditionForFilter "0"
+	  DifferentiatorICPrevScaledInput "0"
+	  ExternalReset		  "none"
+	  IgnoreLimit		  off
+	  TrackingMode		  off
+	  Kt			  "1"
+	  LimitOutput		  off
+	  SatLimitsSource	  "internal"
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  LinearizeAsGain	  on
+	  AntiWindupMode	  "none"
+	  Kb			  "1"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	  LockScale		  off
+	  PGainOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  PProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  POutMin		  "[]"
+	  POutMax		  "[]"
+	  IGainOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IOutMin		  "[]"
+	  IOutMax		  "[]"
+	  DGainOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DOutMin		  "[]"
+	  DOutMax		  "[]"
+	  NGainOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NOutMin		  "[]"
+	  NOutMax		  "[]"
+	  SumOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumOutMin		  "[]"
+	  SumOutMax		  "[]"
+	  SaturationOutDataTypeStr "Inherit: Same as input"
+	  SaturationOutMin	  "[]"
+	  SaturationOutMax	  "[]"
+	  PParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  PParamMin		  "[]"
+	  PParamMax		  "[]"
+	  IParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IParamMin		  "[]"
+	  IParamMax		  "[]"
+	  DParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DParamMin		  "[]"
+	  DParamMax		  "[]"
+	  NParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NParamMin		  "[]"
+	  NParamMax		  "[]"
+	  KbParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KbParamMin		  "[]"
+	  KbParamMax		  "[]"
+	  KtParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KtParamMin		  "[]"
+	  KtParamMax		  "[]"
+	  KbOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KbOutMin		  "[]"
+	  KbOutMax		  "[]"
+	  KtOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KtOutMin		  "[]"
+	  KtOutMax		  "[]"
+	  IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
+	  IntegratorOutMin	  "[]"
+	  IntegratorOutMax	  "[]"
+	  FilterOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  FilterOutMin		  "[]"
+	  FilterOutMax		  "[]"
+	  SumI1OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI1OutMin		  "[]"
+	  SumI1OutMax		  "[]"
+	  SumI2OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI2OutMin		  "[]"
+	  SumI2OutMax		  "[]"
+	  SumI3OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI3OutMin		  "[]"
+	  SumI3OutMax		  "[]"
+	  SumI4OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI4OutMin		  "[]"
+	  SumI4OutMax		  "[]"
+	  SumDOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumDOutMin		  "[]"
+	  SumDOutMax		  "[]"
+	  SumAccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI1AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI2AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI3AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI4AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumDAccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DifferentiatorOutDataTypeStr "Inherit: Inherit via internal rule"
+	  DifferentiatorOutMin	  "[]"
+	  DifferentiatorOutMax	  "[]"
+	  FilterDiffNumProductOutputDataTypeStr	"Inherit: Inherit via internal rule"
+	  FilterDiffDenProductOutputDataTypeStr	"Inherit: Inherit via internal rule"
+	  FilterDiffNumAccumDataTypeStr	"Inherit: Inherit via internal rule"
+	  FilterDiffDenAccumDataTypeStr	"Inherit: Inherit via internal rule"
+	  FilterDiffOutCoefDataTypeStr "Inherit: Inherit via internal rule"
+	  FilterDiffOutCoefMin	  "[]"
+	  FilterDiffOutCoefMax	  "[]"
+	  ReciprocalOutDataTypeStr "Inherit: Inherit via internal rule"
+	  ReciprocalOutMin	  "[]"
+	  ReciprocalOutMax	  "[]"
+	  SumDenOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumDenOutMin		  "[]"
+	  SumDenOutMax		  "[]"
+	  SumNumOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumNumOutMin		  "[]"
+	  SumNumOutMax		  "[]"
+	  SumDenAccumDataTypeStr  "Inherit: Inherit via internal rule"
+	  SumNumAccumDataTypeStr  "Inherit: Inherit via internal rule"
+	  DivideOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DivideOutMin		  "[]"
+	  DivideOutMax		  "[]"
+	  UdiffTsProdOutDataTypeStr "Inherit: Inherit via internal rule"
+	  UdiffTsProdOutMin	  "[]"
+	  UdiffTsProdOutMax	  "[]"
+	  NTsProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NTsProdOutMin		  "[]"
+	  NTsProdOutMax		  "[]"
+	  UintegralTsProdOutDataTypeStr	"Inherit: Inherit via internal rule"
+	  UintegralTsProdOutMin	  "[]"
+	  UintegralTsProdOutMax	  "[]"
+	  UngainTsProdOutDataTypeStr "Inherit: Inherit via internal rule"
+	  UngainTsProdOutMin	  "[]"
+	  UngainTsProdOutMax	  "[]"
+	  IntegratorContinuousStateAttributes "''"
+	  IntegratorStateMustResolveToSignalObject off
+	  IntegratorRTWStateStorageClass "Auto"
+	  FilterContinuousStateAttributes "''"
+	  FilterStateMustResolveToSignalObject off
+	  FilterRTWStateStorageClass "Auto"
+	  ParallelPVariant	  "InternalParameters"
+	  IdealPVariant		  "Disabled"
+	  IVariant		  "InternalParameters"
+	  DVariant		  "InternalParameters"
+	  IntegratorVariant	  "Continuous"
+	  SatVariant		  "Disabled"
+	  AWVariant		  "Passthrough"
+	  PCopyVariant		  "Disabled"
+	  TRVariant		  "Disabled"
+	  FdbkBlocksVariant	  "Forward"
+	  IdealPFdbkVariant	  "Disabled"
+	  SatFdbkVariant	  "Disabled"
+	  DerivativeFilterVariant "ContFilter"
+	  NVariant		  "InternalParameters"
+	  NCopyVariant		  "Disabled"
+	  FilterICVariant	  "InternalICsFilter"
+	  IntegratorICVariant	  "InternalICs"
+	  ExternalResetVariant	  "Disabled"
+	  TRSumVariant		  "Passthrough"
+	  SumFdbkVariant	  "Disabled"
+	  SumVariant		  "Sum_PID"
+	  TsampFilterVariant	  "InternalTs"
+	  TsampNgainVariant	  "Passthrough"
+	  TsampIntegralVariant	  "Passthrough"
+	  ExternalSaturationOutDataTypeStr "Inherit: Same as second input"
+	  InitialConditionSetting "Auto"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Pitch rate sensor"
+	  SID			  "44"
+	  Position		  [170, 110, 200, 140]
+	  ZOrder		  342
+	  BlockMirror		  on
+	  Port {
+	    PortNumber		    1
+	    Name		    "q_m"
+	  }
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  SID			  "40"
+	  Position		  [225, 30, 255, 60]
+	  ZOrder		  338
+	  UpperLimit		  "25"
+	  LowerLimit		  "-25"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation1"
+	  SID			  "53"
+	  Position		  [205, -55, 235, -25]
+	  ZOrder		  345
+	  UpperLimit		  "19000"
+	  LowerLimit		  "1000"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Subtract"
+	  SID			  "34"
+	  Ports			  [2, 1]
+	  Position		  [-90, 27, -60, 58]
+	  ZOrder		  332
+	  IconShape		  "rectangular"
+	  Inputs		  "+-"
+	  Port {
+	    PortNumber		    1
+	    Name		    "error"
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Subtract1"
+	  SID			  "37"
+	  Ports			  [2, 1]
+	  Position		  [60, 27, 90, 58]
+	  ZOrder		  335
+	  IconShape		  "rectangular"
+	  Inputs		  "+-"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "T_0"
+	  SID			  "52"
+	  Position		  [145, -55, 175, -25]
+	  ZOrder		  344
+	  Value			  "T_0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "theta"
+	  SID			  "33"
+	  Position		  [440, 38, 470, 52]
+	  ZOrder		  331
+	}
+	Line {
+	  ZOrder		  40
+	  SrcBlock		  "theta_r"
+	  SrcPort		  1
+	  DstBlock		  "Subtract"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "q"
+	  ZOrder		  49
+	  SrcBlock		  "El-To Pitch rate from SS Niek "
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  Branch {
+	    ZOrder		    58
+	    Labels		    [2, 1]
+	    Points		    [0, 80]
+	    DstBlock		    "Pitch rate sensor"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    57
+	    DstBlock		    "Integrator"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Name			  "theta"
+	  ZOrder		  50
+	  SrcBlock		  "Integrator"
+	  SrcPort		  1
+	  Points		  [17, 0]
+	  Branch {
+	    ZOrder		    52
+	    Labels		    [2, 0]
+	    Points		    [0, 175]
+	    DstBlock		    "Pitch att sensor"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    51
+	    Labels		    [1, 0]
+	    DstBlock		    "theta"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Name			  "error"
+	  ZOrder		  42
+	  Labels		  [1, 1]
+	  SrcBlock		  "Subtract"
+	  SrcPort		  1
+	  DstBlock		  "Pitch controller"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  55
+	  SrcBlock		  "Pitch controller"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, -10]
+	  DstBlock		  "Subtract1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  45
+	  SrcBlock		  "Elevator Servo"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  46
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "El-To Pitch rate from SS Niek "
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "theta_m"
+	  ZOrder		  53
+	  Labels		  [1, 1]
+	  SrcBlock		  "Pitch att sensor"
+	  SrcPort		  1
+	  Points		  [-270, 0]
+	  DstBlock		  "Subtract"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  56
+	  SrcBlock		  "Subtract1"
+	  SrcPort		  1
+	  DstBlock		  "Elevator Servo"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "q_m"
+	  ZOrder		  59
+	  Labels		  [1, 1]
+	  SrcBlock		  "Pitch rate sensor"
+	  SrcPort		  1
+	  Points		  [-128, 0; 0, -75]
+	  DstBlock		  "Subtract1"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  60
+	  SrcBlock		  "T_0"
+	  SrcPort		  1
+	  DstBlock		  "Saturation1"
+	  DstPort		  1
+	}
+	Annotation {
+	  SID			  "48"
+	  Name			  "Waar de engine setting te gebruiken??\n"
+	  Position		  [-114, -72, 59, -46]
+	  InternalMargins	  [0, 0, 0, 0]
+	}
+      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Gama_ref"
+      SID		      "13"
+      Position		      [45, 125, 75, 155]
+      ZOrder		      313
+      Value		      "Gamma_ref"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "H_coupler"
+      SID		      "10"
+      Ports		      [1, 1]
+      Position		      [235, 120, 305, 180]
+      ZOrder		      312
+      RequestExecContextInheritance off
+      ContentPreviewEnabled   on
+      Port {
+	PortNumber		1
+	Name			"theta_r"
+      }
+      System {
+	Name			"H_coupler"
+	Location		[-7, -1087, 1927, -33]
+	SystemRect		[0.000000, 0.000000, 0.000000, 0.000000]
+	Open			off
+	PortBlocksUseCompactNotation off
+	SetExecutionDomain	off
+	ExecutionDomainType	"Deduce"
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"250"
+	SimulinkSubDomain	"Simulink"
+	Block {
+	  BlockType		  Inport
+	  Name			  "gamma_e"
 	  SID			  "11"
 	  Position		  [20, 33, 50, 47]
 	  ZOrder		  311
@@ -1562,7 +2179,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "y"
+	  Name			  "theta_r"
 	  SID			  "12"
 	  Position		  [330, 33, 360, 47]
 	  ZOrder		  312
@@ -1578,12 +2195,12 @@ Model {
 	  ZOrder		  12
 	  SrcBlock		  "PID Controller"
 	  SrcPort		  1
-	  DstBlock		  "y"
+	  DstBlock		  "theta_r"
 	  DstPort		  1
 	}
 	Line {
 	  ZOrder		  11
-	  SrcBlock		  "In1"
+	  SrcBlock		  "gamma_e"
 	  SrcPort		  1
 	  DstBlock		  "K_c"
 	  DstPort		  1
@@ -1594,8 +2211,13 @@ Model {
       BlockType		      Gain
       Name		      "H_receiver"
       SID		      "24"
-      Position		      [355, 265, 385, 295]
+      Position		      [430, 255, 460, 285]
       ZOrder		      323
+      BlockMirror	      on
+      Port {
+	PortNumber		1
+	Name			"Gamma_m"
+      }
     }
     Block {
       BlockType		      Sum
@@ -1612,26 +2234,21 @@ Model {
       }
     }
     Block {
-      BlockType		      Sum
-      Name		      "Sum"
-      SID		      "3"
-      Ports		      [2, 1]
-      Position		      [600, 140, 620, 160]
-      ZOrder		      178
-      Inputs		      "|++"
-    }
-    Block {
       BlockType		      SubSystem
       Name		      "flight path --> deviation"
       SID		      "18"
       Ports		      [1, 1]
-      Position		      [675, 120, 715, 180]
+      Position		      [685, 120, 725, 180]
       ZOrder		      319
       RequestExecContextInheritance off
       ContentPreviewEnabled   on
+      Port {
+	PortNumber		1
+	Name			"d"
+      }
       System {
 	Name			"flight path --> deviation"
-	Location		[30, 30, 1010, 750]
+	Location		[-7, -1087, 1927, -33]
 	SystemRect		[0.000000, 0.000000, 0.000000, 0.000000]
 	Open			off
 	PortBlocksUseCompactNotation off
@@ -1647,7 +2264,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"150"
+	ZoomFactor		"250"
 	SimulinkSubDomain	"Simulink"
 	Block {
 	  BlockType		  Inport
@@ -1703,6 +2320,14 @@ Model {
       }
     }
     Block {
+      BlockType		      Constant
+      Name		      "gamma"
+      SID		      "26"
+      Position		      [45, 80, 75, 110]
+      ZOrder		      325
+      Value		      "gamma"
+    }
+    Block {
       BlockType		      TransferFcn
       Name		      "gamma/theta"
       SID		      "15"
@@ -1718,7 +2343,7 @@ Model {
       BlockType		      Outport
       Name		      "Output"
       SID		      "22"
-      Position		      [840, 143, 870, 157]
+      Position		      [1000, 143, 1030, 157]
       ZOrder		      321
     }
     Line {
@@ -1729,12 +2354,12 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      7
+      ZOrder		      42
       SrcBlock		      "gamma"
       SrcPort		      1
-      Points		      [510, 0; 0, 101; 20, 0]
-      DstBlock		      "Sum"
-      DstPort		      2
+      Points		      [491, 0; 0, 40]
+      DstBlock		      "Add"
+      DstPort		      1
     }
     Line {
       Name		      "Gamma_error"
@@ -1746,70 +2371,226 @@ Model {
       DstPort		      1
     }
     Line {
-      Name		      "theta_r"
-      ZOrder		      18
-      Labels		      [-1, 0]
-      SrcBlock		      "H_coupler"
-      SrcPort		      1
-      DstBlock		      "F16 model from Niek"
-      DstPort		      1
-    }
-    Line {
       Name		      "theta"
-      ZOrder		      20
+      ZOrder		      39
       Labels		      [1, 1]
-      SrcBlock		      "F16 model from Niek"
+      SrcBlock		      "Airplane + AFCS"
       SrcPort		      1
       DstBlock		      "gamma/theta"
       DstPort		      1
     }
     Line {
       Name		      "gamma"
-      ZOrder		      21
-      Labels		      [1, 1]
+      ZOrder		      43
+      Labels		      [1, 0]
       SrcBlock		      "gamma/theta"
       SrcPort		      1
-      DstBlock		      "Sum"
-      DstPort		      1
+      DstBlock		      "Add"
+      DstPort		      2
     }
     Line {
-      ZOrder		      25
-      SrcBlock		      "Sum"
+      Name		      "gamma + 3"
+      ZOrder		      44
+      Labels		      [2, 1]
+      SrcBlock		      "Add"
       SrcPort		      1
+      Points		      [0, 5]
       DstBlock		      "flight path --> deviation"
       DstPort		      1
     }
     Line {
-      ZOrder		      26
+      Name		      "d"
+      ZOrder		      53
+      Labels		      [-1, 0]
       SrcBlock		      "flight path --> deviation"
       SrcPort		      1
-      DstBlock		      "Gain"
+      DstBlock		      "1/R"
       DstPort		      1
     }
     Line {
-      ZOrder		      30
-      SrcBlock		      "H_receiver"
+      Name		      "Gamma"
+      ZOrder		      55
+      Labels		      [0, 1]
+      SrcBlock		      "1/R"
       SrcPort		      1
-      Points		      [19, 0; 0, -49; -298, 0; 0, -76]
-      DstBlock		      "Subtract"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      28
-      SrcBlock		      "Gain"
-      SrcPort		      1
-      Points		      [19, 0]
+      Points		      [66, 0]
       Branch {
-	ZOrder			33
-	Points			[0, 175; -485, 0; 0, -45]
+	ZOrder			57
+	Labels			[2, 1]
+	Points			[0, 120]
 	DstBlock		"H_receiver"
 	DstPort			1
       }
       Branch {
-	ZOrder			32
+	ZOrder			56
 	DstBlock		"Output"
 	DstPort			1
       }
     }
+    Line {
+      Name		      "theta_r"
+      ZOrder		      38
+      Labels		      [-1, 0]
+      SrcBlock		      "H_coupler"
+      SrcPort		      1
+      DstBlock		      "Airplane + AFCS"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Gamma_m"
+      ZOrder		      47
+      Labels		      [0, 0]
+      SrcBlock		      "H_receiver"
+      SrcPort		      1
+      Points		      [-314, 0; 0, -115]
+      DstBlock		      "Subtract"
+      DstPort		      2
+    }
+  }
+}
+#Finite State Machines
+#
+#   Stateflow 80000036
+#
+#
+Stateflow {
+  machine {
+    id			    1
+    name		    "ILSGlideslopeSimulink"
+    sfVersion		    80000036
+    firstTarget		    9
+  }
+  chart {
+    id			    2
+    machine		    1
+    name		    "1//R"
+    windowPosition	    [422 539.941 189 413]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 3600 1200 1.180555555555556]
+    treeNode		    [0 3 0 0]
+    viewObj		    2
+    toolbarMode		    LIBRARY_TOOLBAR
+    subviewS {
+    }
+    ssIdHighWaterMark	    5
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    chartFileNumber	    2
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+    firstData		    4
+    firstTransition	    7
+    firstJunction	    6
+  }
+  state {
+    id			    3
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    2
+    treeNode		    [2 0 0 0]
+    superState		    SUBCHART
+    subviewer		    2
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function y = fcn(u)\n\ny = u;\n"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    4
+    ssIdNumber		    4
+    name		    "u"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [2 0 5]
+  }
+  data {
+    id			    5
+    ssIdNumber		    5
+    name		    "y"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [2 4 0]
+  }
+  junction {
+    id			    6
+    position		    [23.5747 49.5747 7]
+    chart		    2
+    subviewer		    2
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+    linkNode		    [2 0 0]
+  }
+  transition {
+    id			    7
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [28.125 13.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      6
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    2
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+    linkNode		    [2 0 0]
+  }
+  instance {
+    id			    8
+    machine		    1
+    name		    "1//R"
+    chart		    2
+  }
+  target {
+    id			    9
+    machine		    1
+    name		    "sfun"
+    description		    "Default Simulink S-Function Target."
+    linkNode		    [1 0 0]
   }
 }
