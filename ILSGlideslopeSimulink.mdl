@@ -14,7 +14,7 @@ Model {
       UnitExpr		      "inherit"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.10"
+    ComputedModelVersion    "1.11"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -195,9 +195,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "hooge"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Jan 25 15:52:41 2021"
-  RTWModifiedTimeStamp	  533490624
-  ModelVersionFormat	  "%<AutoIncrement:1.10>"
+  LastModifiedDate	  "Mon Jan 25 15:57:35 2021"
+  RTWModifiedTimeStamp	  533491053
+  ModelVersionFormat	  "%<AutoIncrement:1.11>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1357,7 +1357,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "150"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "68"
+    SIDHighWatermark	    "71"
     SimulinkSubDomain	    "Simulink"
     Block {
       BlockType		      Sum
@@ -1849,15 +1849,6 @@ Model {
       }
     }
     Block {
-      BlockType		      Math
-      Name		      "Exp"
-      SID		      "65"
-      Ports		      [1, 1]
-      Position		      [690, -40, 720, -10]
-      ZOrder		      346
-      SignedPower	      on
-    }
-    Block {
       BlockType		      Constant
       Name		      "Gama_ref"
       SID		      "13"
@@ -2166,11 +2157,21 @@ Model {
     }
     Block {
       BlockType		      Math
-      Name		      "Math\nFunction"
-      SID		      "67"
+      Name		      "Power"
+      SID		      "69"
       Ports		      [1, 1]
-      Position		      [735, 20, 765, 50]
-      ZOrder		      348
+      Position		      [690, -41, 720, -9]
+      ZOrder		      350
+      Operator		      "magnitude^2"
+    }
+    Block {
+      BlockType		      Math
+      Name		      "Power1"
+      SID		      "71"
+      Ports		      [1, 1]
+      Position		      [735, 19, 765, 51]
+      ZOrder		      352
+      Operator		      "magnitude^2"
     }
     Block {
       BlockType		      Sqrt
@@ -2450,30 +2451,30 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      72
+      ZOrder		      83
       SrcBlock		      "Integrator"
       SrcPort		      1
-      DstBlock		      "Math\nFunction"
+      DstBlock		      "Power1"
       DstPort		      1
     }
     Line {
-      ZOrder		      70
+      ZOrder		      81
       SrcBlock		      "H/del"
       SrcPort		      1
-      DstBlock		      "Exp"
+      DstBlock		      "Power"
       DstPort		      1
     }
     Line {
-      ZOrder		      73
-      SrcBlock		      "Exp"
+      ZOrder		      82
+      SrcBlock		      "Power"
       SrcPort		      1
       Points		      [55, 0; 0, 45]
       DstBlock		      "Add1"
       DstPort		      1
     }
     Line {
-      ZOrder		      74
-      SrcBlock		      "Math\nFunction"
+      ZOrder		      84
+      SrcBlock		      "Power1"
       SrcPort		      1
       DstBlock		      "Add1"
       DstPort		      2
