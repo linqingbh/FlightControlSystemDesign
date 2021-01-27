@@ -5,16 +5,22 @@ Model {
   ModelUUID		  "96ddb634-5730-4993-90b8-9c227c216080"
   GraphicalInterface {
     NumRootInports	    0
-    NumRootOutports	    1
+    NumRootOutports	    2
     Outport {
-      Name		      "Output"
+      Name		      "Gamma"
       BusObject		      ""
       BusOutputAsStruct	      "off"
       SignalName	      "Gamma"
       UnitExpr		      "inherit"
     }
+    Outport {
+      Name		      "H"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      UnitExpr		      "inherit"
+    }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.11"
+    ComputedModelVersion    "1.13"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -98,8 +104,8 @@ Model {
 	  LoadSaveID		  "0"
 	  Extents		  [2287.0, 1025.0]
 	  ZoomFactor		  [1.5]
-	  Offset		  [11.294018374318041, -170.90804581571206]
-	  SceneRectInView	  [11.294018374318041, -170.90804581571206, 1219.7333333333333, 546.66666666666663]
+	  Offset		  [16.240685040985387, -117.41243954180521]
+	  SceneRectInView	  [16.240685040985387, -117.41243954180521, 1219.7333333333333, 546.66666666666663]
 	}
 	Object {
 	  $ObjectID		  6
@@ -117,22 +123,22 @@ Model {
 	  IsActive		  [0]
 	  IsTabbed		  [0]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "10"
+	  LoadSaveID		  "18"
 	  Extents		  [2287.0, 1025.0]
-	  ZoomFactor		  [2.5]
-	  Offset		  [-60.479999999999905, -109.02000000000001]
-	  SceneRectInView	  [-60.479999999999905, -109.02000000000001, 731.84, 328.0]
+	  ZoomFactor		  [2.4999999999999996]
+	  Offset		  [-160.84239579439554, -125.93714285714277]
+	  SceneRectInView	  [-160.84239579439554, -125.93714285714277, 731.84000000000015, 328.00000000000006]
 	}
 	Object {
 	  $ObjectID		  8
 	  IsActive		  [0]
 	  IsTabbed		  [0]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "18"
+	  LoadSaveID		  "10"
 	  Extents		  [2287.0, 1025.0]
-	  ZoomFactor		  [2.5]
-	  Offset		  [-160.84239579439549, -125.93714285714275]
-	  SceneRectInView	  [-160.84239579439549, -125.93714285714275, 731.84, 328.0]
+	  ZoomFactor		  [2.4999999999999996]
+	  Offset		  [-60.479999999999961, -109.02000000000004]
+	  SceneRectInView	  [-60.479999999999961, -109.02000000000004, 731.84000000000015, 328.00000000000006]
 	}
 	PropName		"EditorsInfo"
       }
@@ -141,19 +147,6 @@ Model {
 	Dimension		2
 	Object {
 	  $ObjectID		  9
-	  Type			  "Simulink:Editor:ReferencedFiles"
-	  ID			  "Referenced Files"
-	  Visible		  [0]
-	  CreateCallback	  ""
-	  UserData		  "{\"filterShowRefModels\":\"true\",\"filterShowRefSubs\":\"true\",\"filterShowOnlyDirtyFiles\":\"false\"}\n"
-	  Floating		  [0]
-	  DockPosition		  "Left"
-	  Width			  [512]
-	  Height		  [384]
-	  Minimized		  "Unset"
-	}
-	Object {
-	  $ObjectID		  10
 	  Type			  "GLUE2:PropertyInspector"
 	  ID			  "Property Inspector"
 	  Visible		  [1]
@@ -164,6 +157,19 @@ Model {
 	  Width			  [512]
 	  Height		  [384]
 	  Minimized		  "On"
+	}
+	Object {
+	  $ObjectID		  10
+	  Type			  "Simulink:Editor:ReferencedFiles"
+	  ID			  "Referenced Files"
+	  Visible		  [0]
+	  CreateCallback	  ""
+	  UserData		  "{\"filterShowRefModels\":\"true\",\"filterShowRefSubs\":\"true\",\"filterShowOnlyDirtyFiles\":\"false\"}\n"
+	  Floating		  [0]
+	  DockPosition		  "Left"
+	  Width			  [512]
+	  Height		  [384]
+	  Minimized		  "Unset"
 	}
 	PropName		"DockComponentsInfo"
       }
@@ -195,9 +201,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "hooge"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Jan 25 15:57:35 2021"
-  RTWModifiedTimeStamp	  533491053
-  ModelVersionFormat	  "%<AutoIncrement:1.11>"
+  LastModifiedDate	  "Wed Jan 27 15:36:54 2021"
+  RTWModifiedTimeStamp	  533661280
+  ModelVersionFormat	  "%<AutoIncrement:1.13>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1357,7 +1363,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "150"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "71"
+    SIDHighWatermark	    "74"
     SimulinkSubDomain	    "Simulink"
     Block {
       BlockType		      Sum
@@ -1418,14 +1424,14 @@ Model {
 	  BlockType		  Inport
 	  Name			  "theta_r"
 	  SID			  "32"
-	  Position		  [-140, 28, -110, 42]
+	  Position		  [-190, 28, -160, 42]
 	  ZOrder		  330
 	}
 	Block {
 	  BlockType		  TransferFcn
 	  Name			  "El-To Pitch rate from SS Niek "
 	  SID			  "41"
-	  Position		  [280, 27, 340, 63]
+	  Position		  [280, 27, 330, 63]
 	  ZOrder		  339
 	  Numerator		  "[-0.05702 -0.03308 -0.001052 4.378e-17 0]"
 	  Denominator		  "[1 1.391 0.1847 0.005469 -0.007719 2.533e-16]"
@@ -1457,6 +1463,13 @@ Model {
 	}
 	Block {
 	  BlockType		  Gain
+	  Name			  "K_q"
+	  SID			  "74"
+	  Position		  [80, 30, 110, 60]
+	  ZOrder		  345
+	}
+	Block {
+	  BlockType		  Gain
 	  Name			  "Pitch att sensor"
 	  SID			  "43"
 	  Position		  [170, 205, 200, 235]
@@ -1472,7 +1485,7 @@ Model {
 	  Name			  "Pitch controller"
 	  SID			  "36"
 	  Ports			  [1, 1]
-	  Position		  [-20, 27, 20, 63]
+	  Position		  [-60, 27, -20, 63]
 	  ZOrder		  334
 	  LibraryVersion	  "2.30"
 	  SourceBlock		  "pid_lib/PID Controller"
@@ -1493,8 +1506,8 @@ Model {
 	  FilterMethod		  "Forward Euler"
 	  ControllerParametersSource "internal"
 	  P			  "1"
-	  I			  "1"
-	  D			  "0"
+	  I			  "0"
+	  D			  "1"
 	  UseFilter		  on
 	  N			  "100"
 	  TunerSelectOption	  "Transfer Function Based (PID Tuner App)"
@@ -1685,7 +1698,7 @@ Model {
 	  Name			  "Subtract"
 	  SID			  "34"
 	  Ports			  [2, 1]
-	  Position		  [-90, 27, -60, 58]
+	  Position		  [-135, 27, -105, 58]
 	  ZOrder		  332
 	  IconShape		  "rectangular"
 	  Inputs		  "+-"
@@ -1699,7 +1712,7 @@ Model {
 	  Name			  "Subtract1"
 	  SID			  "37"
 	  Ports			  [2, 1]
-	  Position		  [60, 27, 90, 58]
+	  Position		  [25, 37, 55, 68]
 	  ZOrder		  335
 	  IconShape		  "rectangular"
 	  Inputs		  "+-"
@@ -1715,7 +1728,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "Elevator"
 	  SID			  "57"
-	  Position		  [435, -7, 465, 7]
+	  Position		  [440, -7, 470, 7]
 	  ZOrder		  343
 	  Port			  "2"
 	}
@@ -1731,7 +1744,7 @@ Model {
 	  ZOrder		  49
 	  SrcBlock		  "El-To Pitch rate from SS Niek "
 	  SrcPort		  1
-	  Points		  [5, 0]
+	  Points		  [15, 0]
 	  Branch {
 	    ZOrder		    58
 	    Labels		    [2, 1]
@@ -1778,7 +1791,6 @@ Model {
 	  ZOrder		  55
 	  SrcBlock		  "Pitch controller"
 	  SrcPort		  1
-	  Points		  [15, 0; 0, -10]
 	  DstBlock		  "Subtract1"
 	  DstPort		  1
 	}
@@ -1812,15 +1824,16 @@ Model {
 	  Labels		  [1, 1]
 	  SrcBlock		  "Pitch att sensor"
 	  SrcPort		  1
-	  Points		  [-270, 0]
+	  Points		  [-315, 0]
 	  DstBlock		  "Subtract"
 	  DstPort		  2
 	}
 	Line {
-	  ZOrder		  56
+	  ZOrder		  79
 	  SrcBlock		  "Subtract1"
 	  SrcPort		  1
-	  DstBlock		  "Elevator Servo"
+	  Points		  [5, 0]
+	  DstBlock		  "K_q"
 	  DstPort		  1
 	}
 	Line {
@@ -1829,9 +1842,16 @@ Model {
 	  Labels		  [1, 1]
 	  SrcBlock		  "Pitch rate sensor"
 	  SrcPort		  1
-	  Points		  [-128, 0; 0, -75]
+	  Points		  [-155, 0]
 	  DstBlock		  "Subtract1"
 	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  80
+	  SrcBlock		  "K_q"
+	  SrcPort		  1
+	  DstBlock		  "Elevator Servo"
+	  DstPort		  1
 	}
       }
     }
@@ -1840,7 +1860,7 @@ Model {
       Name		      "Divide"
       SID		      "68"
       Ports		      [2, 1]
-      Position		      [810, 132, 840, 163]
+      Position		      [810, 142, 840, 173]
       ZOrder		      349
       Inputs		      "*/"
       Port {
@@ -2318,10 +2338,18 @@ Model {
     }
     Block {
       BlockType		      Outport
-      Name		      "Output"
+      Name		      "Gamma"
       SID		      "22"
-      Position		      [1000, 143, 1030, 157]
+      Position		      [1000, 153, 1030, 167]
       ZOrder		      321
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "H"
+      SID		      "73"
+      Position		      [965, -47, 995, -33]
+      ZOrder		      353
+      Port		      "2"
     }
     Line {
       ZOrder		      13
@@ -2377,10 +2405,9 @@ Model {
     Line {
       Name		      "d"
       ZOrder		      79
-      Labels		      [-1, 0]
+      Labels		      [1, 0]
       SrcBlock		      "flight path --> deviation"
       SrcPort		      1
-      Points		      [38, 0; 0, -10]
       DstBlock		      "Divide"
       DstPort		      1
     }
@@ -2392,15 +2419,15 @@ Model {
       SrcPort		      1
       Points		      [91, 0]
       Branch {
-	ZOrder			78
-	Labels			[2, 1]
-	Points			[0, 120]
-	DstBlock		"H_receiver"
+	ZOrder			85
+	DstBlock		"Gamma"
 	DstPort			1
       }
       Branch {
-	ZOrder			77
-	DstBlock		"Output"
+	ZOrder			78
+	Labels			[2, 1]
+	Points			[0, 110]
+	DstBlock		"H_receiver"
 	DstPort			1
       }
     }
@@ -2461,8 +2488,18 @@ Model {
       ZOrder		      81
       SrcBlock		      "H/del"
       SrcPort		      1
-      DstBlock		      "Power"
-      DstPort		      1
+      Points		      [14, 0]
+      Branch {
+	ZOrder			100
+	Points			[0, -40; 209, 0; 0, 25]
+	DstBlock		"H"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			99
+	DstBlock		"Power"
+	DstPort			1
+      }
     }
     Line {
       ZOrder		      82
@@ -2492,7 +2529,7 @@ Model {
       Labels		      [3, 1]
       SrcBlock		      "Sqrt"
       SrcPort		      1
-      Points		      [19, 0; 0, 59; -125, 0; 0, 66]
+      Points		      [19, 0; 0, 64; -129, 0; 0, 71]
       DstBlock		      "Divide"
       DstPort		      2
     }
