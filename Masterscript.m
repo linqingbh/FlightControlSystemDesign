@@ -15,14 +15,15 @@ Initial_throttle = 1000 %[lb] initial thrust setting
 TF = 5 % dummy simulation time per 'iteration'
 H_flare = 3050 %[ft] = 50 ft AGL
 t_sim = 0 %[s] simulation time
+tau = 1.1233 %[s] time constant for flare mode
 
 
 
 
 
 
-
-sim('ILSGlideslopeSimulink.mdl')
+%sim('ILSGlideslopeSimulink_saturation.slx')
+sim('flare_mode_saturation.slx')
 
 %% Run the GlideSlope Model while H > H_flare
 %while H > H_flare;
