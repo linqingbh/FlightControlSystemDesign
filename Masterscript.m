@@ -22,19 +22,8 @@ tau = 1.1233 %[s] time constant for flare mode
 
 
 
-%sim('ILSGlideslopeSimulink_saturation.slx')
-sim('flare_mode_saturation.slx')
+sim('ILSGlideslopeSimulink.mdl')
+%sim('flare_mode_saturation.slx')
 
-%% Run the GlideSlope Model while H > H_flare
-%while H > H_flare;
-    %sim('ILSGlideslopeSimulink.mdl');
-    %t_sim += TF
-    %H = yout.getElement('h');
-    
-    %figure
-    %plot(TF, t_sim)
-%end
-%while H > 3000
-    %sim('flare.mdl')
-    %t_sim += TF
+
     
