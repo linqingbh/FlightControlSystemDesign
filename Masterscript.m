@@ -9,21 +9,20 @@ alpha_ref = 0
 gamma_r = 3/180*pi %[deg]
 Initial_elevator = -4.1891 %[deg]
 H_0 = 5000 %[ft]
-H   = 5000  %[ft] actual altitude
+H   = 100  %[ft] actual altitude
 V_ref = 300 %[ft/s]
-R_init = 38214 %[ft] 5000ft altitude, 8 miles away from RWY 
-Initial_throttle = 2826.8165 %[lb] initial thrust setting
-TF = 1000 % dummy simulation time per 'iteration'
-H_flare = 3050 %[ft] = 50 ft AGL
-t_sim = 0 %[s] simulation time
+R_init = 42000 %[ft] 5000ft altitude, 8 miles away from RWY 
+TF = 500 % if H_flare is not reached within this time, the simulation ends
+H_flare = 3017.5 %[ft] = 17.5 ft AGL
 tau = 1.1233 %[s] time constant for flare mode
+Ground_elevation = 3000 %[ft]
 
 
 
 
 
 
-sim('ILSGlideslopeSimulink.mdl')
+sim('ILSGlideslopeSimulinkRIK.mdl')
 %sim('flare_mode_saturation.slx')
 
 
