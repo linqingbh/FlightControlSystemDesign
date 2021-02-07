@@ -8,7 +8,7 @@
 % First you need to run the FindF16Dynamics.m file and run this file next.
 %
 % Do you want to save the state-spaces in a .mat file?
-saving = false;
+saving = true;
 
 %%
 % ==================================
@@ -85,7 +85,7 @@ SS_lat = ss(Aac_lat,Bac_lat,Cac_lat,Dac_lat);
 
 % Change names
 SS_lat.StateName = {'beta','phi','p','r'};
-SS_lat.InputName = {'da','dr'};
+SS_lat.InputName = {'del','dr'};
 
 %%
 % ==================================
